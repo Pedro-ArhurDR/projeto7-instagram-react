@@ -1,16 +1,21 @@
 export default function Sidebar(){
-    return <>
-    <div class="sidebar">
-      <div class="usuario">
-        <img src="assets/img/catanacomics.svg" />
+
+    function Usuario2(props){
+       return <div class="usuario">
+        <img src={props.src}/>
         <div class="texto">
-          <strong>catanacomics</strong>
+          <strong>{props.name}</strong>
           <span>
-            Catana
+            {props.user}
             <ion-icon name="pencil"></ion-icon>
           </span>
         </div>
       </div>
+    }
+    return <>
+
+    <div class="sidebar">
+        <Usuario2 src="assets/img/catanacomics.svg" name="catanacomics" user="Catana"/>
 
       <div class="sugestoes">
         <div class="titulo">

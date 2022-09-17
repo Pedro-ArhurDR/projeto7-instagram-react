@@ -10,7 +10,46 @@ export default function Corpo(){
           <div class="imagem">
             <img src={props.src}/>
           </div>
-          <Usuario name = "9gag"/>
+          <Usuario name = {props.name}/>
+        </div>
+        </>
+    }
+    function Post(props){
+        return <>
+        <div class="post">
+          <div class="topo">
+            <div class="usuario">
+              <img src={props.img1} />
+              {props.name}
+            </div>
+            <div class="acoes">
+              <ion-icon name="ellipsis-horizontal"></ion-icon>
+            </div>
+          </div>
+
+          <div class="conteudo">
+            <img src={props.img2}/>
+          </div>
+
+          <div class="fundo">
+            <div class="acoes">
+              <div>
+                <ion-icon name="heart-outline"></ion-icon>
+                <ion-icon name="chatbubble-outline"></ion-icon>
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </div>
+              <div>
+                <ion-icon name="bookmark-outline"></ion-icon>
+              </div>
+            </div>
+
+            <div class="curtidas">
+              <img src={props.imgC} />
+              <div class="texto">
+                Curtido por <strong>{props.nameC}</strong> e <strong>outras {props.numberC} pessoas</strong>
+              </div>
+            </div>
+          </div>
         </div>
         </>
     }
@@ -18,133 +57,22 @@ export default function Corpo(){
     return <div class="corpo">
     <div class="esquerda">
       <div class="stories">
-        <Story src="assets/img/9gag.svg"/>
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/meowed.svg" />
-          </div>
-          <Usuario name = "meowed"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/barked.svg" />
-          </div>
-          <Usuario name = "barked"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/nathanwpylestrangeplanet.svg" />
-          </div>
-          <Usuario name = "nathanwpylestrangeplane"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/wawawicomics.svg" />
-          </div>
-          <Usuario name = "wawawicomics"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/respondeai.svg" />
-          </div>
-          <Usuario name = "respondeai"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/filomoderna.svg" />
-          </div>
-          <Usuario name = "filomoderna"/>
-        </div>
-
-        <div class="story">
-          <div class="imagem">
-            <img src="assets/img/memeriagourmet.svg" />
-          </div>
-          <Usuario name = "memeriagourmet"/>
-        </div>
-
+        <Story src="assets/img/9gag.svg" name="9gag"/>
+        <Story src="assets/img/meowed.svg" name="meowed" />
+        <Story src="assets/img/barked.svg" name="barked"/>
+        <Story src="assets/img/nathanwpylestrangeplanet.svg" name="nathanwpylestrangeplanet"/>
+        <Story src="assets/img/wawawicomics.svg" name="wawawicomics"/>
+        <Story src="assets/img/respondeai.svg" name="espondeai"/>
+        <Story src="assets/img/filomoderna.svg" name="filomoderna"/>
+        <Story src="assets/img/memeriagourmet.svg" name="memeriagourmet"/>
         <div class="setinha">
           <ion-icon name="chevron-forward-circle"></ion-icon>
         </div>
       </div>
 
       <div class="posts">
-        <div class="post">
-          <div class="topo">
-            <div class="usuario">
-              <img src="assets/img/meowed.svg" />
-              meowed
-            </div>
-            <div class="acoes">
-              <ion-icon name="ellipsis-horizontal"></ion-icon>
-            </div>
-          </div>
-
-          <div class="conteudo">
-            <img src="assets/img/gato-telefone.svg" />
-          </div>
-
-          <div class="fundo">
-            <div class="acoes">
-              <div>
-                <ion-icon name="heart-outline"></ion-icon>
-                <ion-icon name="chatbubble-outline"></ion-icon>
-                <ion-icon name="paper-plane-outline"></ion-icon>
-              </div>
-              <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
-              </div>
-            </div>
-
-            <div class="curtidas">
-              <img src="assets/img/respondeai.svg" />
-              <div class="texto">
-                Curtido por <strong>respondeai</strong> e <strong>outras 101.523 pessoas</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="post">
-          <div class="topo">
-            <div class="usuario">
-              <img src="assets/img/barked.svg" />
-              barked
-            </div>
-            <div class="acoes">
-              <ion-icon name="ellipsis-horizontal"></ion-icon>
-            </div>
-          </div>
-
-          <div class="conteudo">
-            <img src="assets/img/dog.svg" />
-          </div>
-
-          <div class="fundo">
-            <div class="acoes">
-              <div>
-                <ion-icon name="heart-outline"></ion-icon>
-                <ion-icon name="chatbubble-outline"></ion-icon>
-                <ion-icon name="paper-plane-outline"></ion-icon>
-              </div>
-              <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
-              </div>
-            </div>
-
-            <div class="curtidas">
-              <img src="assets/img/adorable_animals.svg" />
-              <div class="texto">
-                Curtido por <strong>adorable_animals</strong> e <strong>outras 99.159 pessoas</strong>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Post img1="assets/img/meowed.svg" name="meowed" img2="assets/img/gato-telefone.svg" imgC="assets/img/respondeai.svg" nameC="respondeai" numberC="101.523"/>
+        <Post img1="assets/img/barked.svg" name="barked" img2="assets/img/dog.svg" imgC="assets/img/adorable_animals.svg" nameC="adorable_animals" numberC="99.159"/>
       </div>
     </div>
 
