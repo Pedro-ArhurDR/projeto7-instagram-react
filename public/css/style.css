@@ -11,6 +11,21 @@ body {
   font-size: 14px;
 }
 
+.like{
+  color:red;
+  border-radius: 30px;
+}
+.semLike{
+ background-color: white;
+}
+.like2{
+  color:red;
+  border-radius: 30px;
+}
+.semLike2{
+ background-color: white;
+}
+
 .navbar {
   width: 100%;
   display: flex;
