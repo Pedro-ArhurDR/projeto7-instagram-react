@@ -9,6 +9,8 @@ export default function Posts(){
     const [like2, setLike2] = useState('semLike2')
     const [curtida,setCurtida]= useState("heart-outline")
     const [curtida2,setCurtida2]= useState("heart-outline")
+    const [marcador,setMarcador] = useState("bookmark-outline")
+    const [marcador2,setMarcador2] = useState("bookmark-outline")
     console.log(contador)
     console.log(number)
   
@@ -16,13 +18,16 @@ export default function Posts(){
         <Post img1="assets/img/meowed.svg" name="meowed" img2="assets/img/gato-telefone.svg" 
         imgC="assets/img/respondeai.svg" nameC="respondeai" numberC={number} 
         heart={<ion-icon class={like2} onClick={() => contador === 0? setNumber(number+1) & setContador(contador+1) & setLike2('like2') & setCurtida("heart") 
-        : setNumber(number-1) & setContador(contador-1)& setLike2('semlike2') &setCurtida("heart-outline")}name={curtida}></ion-icon>} />,
+        : setNumber(number-1) & setContador(contador-1)& setLike2('semlike2') &setCurtida("heart-outline")}name={curtida}></ion-icon>} 
+        marcador={<ion-icon onClick={()=>setMarcador("bookmark")} name={marcador}></ion-icon>} />,
 
         <Post img1="assets/img/barked.svg" name="barked" img3="assets/img/dog.svg" 
         imgC="assets/img/adorable_animals.svg" nameC="adorable_animals" numberC={number2} 
         heart={<ion-icon class={like} onClick={() => contador2 === 0? setNumber2(number2+1) & setContador2(contador2+1) & setLike('like') & setCurtida2("heart") 
         : setNumber2(number2-1) & setContador2(contador2-1) & setLike('semLike') & setCurtida2("heart-outline")}
-        name={curtida2}></ion-icon>} />
+        name={curtida2}></ion-icon>}
+        marcador2={<ion-icon onClick={()=>setMarcador2("bookmark")} name={marcador2}></ion-icon>} />,
+
     ]
     function Post(props){
         return <>
@@ -52,7 +57,8 @@ export default function Posts(){
                 <ion-icon name="paper-plane-outline"></ion-icon>
               </div>
               <div>
-                <ion-icon name="bookmark-outline"></ion-icon>
+                {props.marcador}
+                {props.marcador2}
               </div>
             </div>
 
