@@ -13,12 +13,12 @@ export default function Posts(){
     console.log(number)
   
     const posts = [
-        <Post  img1="assets/img/meowed.svg" name="meowed" img2="assets/img/gato-telefone.svg" 
+        <Post img1="assets/img/meowed.svg" name="meowed" img2="assets/img/gato-telefone.svg" 
         imgC="assets/img/respondeai.svg" nameC="respondeai" numberC={number} 
         heart={<ion-icon class={like2} onClick={() => contador === 0? setNumber(number+1) & setContador(contador+1) & setLike2('like2') & setCurtida("heart") 
-        : setNumber(number-1) & setContador(contador-1)& setLike2('semlike2') & setCurtida("heart-outline")}name={curtida}></ion-icon>} />,
+        : setNumber(number-1) & setContador(contador-1)& setLike2('semlike2') &setCurtida("heart-outline")}name={curtida}></ion-icon>} />,
 
-        <Post img1="assets/img/barked.svg" name="barked" img2="assets/img/dog.svg" 
+        <Post img1="assets/img/barked.svg" name="barked" img3="assets/img/dog.svg" 
         imgC="assets/img/adorable_animals.svg" nameC="adorable_animals" numberC={number2} 
         heart={<ion-icon class={like} onClick={() => contador2 === 0? setNumber2(number2+1) & setContador2(contador2+1) & setLike('like') & setCurtida2("heart") 
         : setNumber2(number2-1) & setContador2(contador2-1) & setLike('semLike') & setCurtida2("heart-outline")}
@@ -38,7 +38,10 @@ export default function Posts(){
           </div>
 
           <div class="conteudo">
-            <img src={props.img2}/>
+            <img onClick={() => contador === 0? setNumber(number+1) & setContador(contador+1) & setLike2('like2') & setCurtida("heart") 
+        : setNumber(number-1) & setContador(contador-1)& setLike2('semlike2') &setCurtida("heart-outline")} src={props.img2}/>
+            <img onClick={() => contador2 === 0? setNumber2(number2+1) & setContador2(contador2+1) & setLike('like') & setCurtida2("heart") 
+        : setNumber2(number2-1) & setContador2(contador2-1) & setLike('semLike') & setCurtida2("heart-outline")} src={props.img3}/>
           </div>
 
           <div class="fundo">
